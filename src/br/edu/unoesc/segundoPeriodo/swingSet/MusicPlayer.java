@@ -23,21 +23,25 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JToggleButton;
-
-import br.edu.unoesc.segundoPeriodo.swingSet.JImagePanel;
-
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class MusicPlayer extends JFrame {
 
+	/**
+	 * 
+	 */
+	
+	private static final long serialVersionUID = 1L;
 	private JImagePanel pnlPrincipal;
+	private JImagePanel jipBg, jipCima;
 	private JPanel pnlControles;
 	private JPanel pnlLista;
 	private JPanel pnlBotoesEdicaoLista;
 
 	private JToggleButton jtbPlaynPause;
+	private JToggleButton jtbExtend;
 	private JButton jbtNext;
-	private JButton jbtPrevius;
+	private JButton jbtPrevious;
 	private JButton jbtRemover;
 	private JButton jbtAdd;
 
@@ -48,6 +52,7 @@ public class MusicPlayer extends JFrame {
 
 	public MusicPlayer() throws IOException {
 		super("Music Player");
+		getClass().getResourceAsStream("/icones");
 		setContentPane(getPainelPrincipal());
 		setLocation(400, 100);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -60,7 +65,9 @@ public class MusicPlayer extends JFrame {
 		if (pnlPrincipal != null)
 			return pnlPrincipal;
 
-		pnlPrincipal = new JImagePanel("icones/Bg2.png");
+		jipBg = new JImagePanel("icones/Bg2.png");
+		jipCima = new JImagePanel("icones/Cima.png");
+		pnlPrincipal = jipBg;
 		pnlPrincipal.setLayout(new BorderLayout());
 		pnlPrincipal.add(getPainelMusicas(), BorderLayout.CENTER);
 		pnlPrincipal.add(getPainelControles(), BorderLayout.NORTH);
@@ -215,12 +222,12 @@ public class MusicPlayer extends JFrame {
 			}
 		});
 
-		jbtPrevius = new JButton();
-		jbtPrevius.setIcon(new ImageIcon("icones/Previous record.png"));
-		jbtPrevius.setBorder(null);
-		jbtPrevius.setBackground(null);
-		jbtPrevius.setContentAreaFilled(false);
-		jbtPrevius.addActionListener(new ActionListener() {
+		jbtPrevious = new JButton();
+		jbtPrevious.setIcon(new ImageIcon("icones/Previous record.png"));
+		jbtPrevious.setBorder(null);
+		jbtPrevious.setBackground(null);
+		jbtPrevious.setContentAreaFilled(false);
+		jbtPrevious.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -242,18 +249,51 @@ public class MusicPlayer extends JFrame {
 				}
 			}
 		});
+		
+		jtbExtend = new JToggleButton();
+		jtbExtend.setIcon(new ImageIcon("icones/Top.png"));
+		jtbExtend.setBorder(null);
+		jtbExtend.setBackground(null);
+		jtbExtend.setContentAreaFilled(false);
+		jtbExtend.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed (ActionEvent arg0) {
+				if (jtbExtend.isSelected()){
+					jtbExtend.setIcon(new ImageIcon("icones/Bottom.png"));
+					setSize(400, 62);
+					pnlPrincipal = jipCima;
+					setContentPane(pnlPrincipal);
+					pnlPrincipal.setLayout(new BorderLayout());
+					pnlPrincipal.add(getPainelMusicas(), BorderLayout.CENTER);
+					pnlPrincipal.add(getPainelControles(), BorderLayout.NORTH);
+				} else {
+					jtbExtend.setIcon(new ImageIcon("icones/Top.png"));
+					setSize(400, 420);
+					pnlPrincipal = jipBg;
+					pnlPrincipal.repaint();
+					setContentPane(pnlPrincipal);
+					pnlPrincipal.setLayout(new BorderLayout());
+					pnlPrincipal.add(getPainelMusicas(), BorderLayout.CENTER);
+					pnlPrincipal.add(getPainelControles(), BorderLayout.NORTH);
+				}
+				
+			}			 
+		});
 
 		jlbTocando = new JLabel("Tocando: Nenhuma"); // 39
 		jlbTocando.setFont(new Font("Arial", Font.ITALIC, 12));
 		jlbTocando.setForeground(Color.WHITE);
+		jlbTocando.setPreferredSize(new Dimension(265, 22));
 
 		pnlControles = new JPanel();
 		pnlControles.setLayout(new FlowLayout(FlowLayout.LEFT));
 		pnlControles.setOpaque(false);
-		pnlControles.add(jbtPrevius);
+		pnlControles.add(jbtPrevious);
 		pnlControles.add(jtbPlaynPause);
 		pnlControles.add(jbtNext);
 		pnlControles.add(jlbTocando);
+		pnlControles.add(jtbExtend);
 
 		return pnlControles;
 	}
