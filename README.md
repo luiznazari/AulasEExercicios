@@ -3,17 +3,20 @@ AulasEExercicios
 
 Fins Acadêmicos - Arquivos de aulas e exercícios separados
 
-==========================================================
+<hr>
 
 Universidade do Oeste de Santa Catarina - UNOESC Xanxerê
 Curso: Tecnologia em Análise e Desenvolvimento de Sistemas
 
-Acadêmico: Luiz Felipe Nazari 
-| Contato: 
-[Hotmail] luyz_felipe@hotmail.com
-[GMail]   luiz.nazari.42@gmail.com
+<strong>Acadêmico:</strong> Luiz Felipe Nazari 
+<br>
+<strong>Contatos:</strong>
+<ul>
+  <li>luyz_felipe@hotmail.com</li>
+  <li>luiz.nazari.42@gmail.com</li>
+</ul>
 
-==========================================================
+<hr>
 
 Todo o conteúdo deste repositório foi criado para fins acadêmicos, estudo e resolução de exercícios.
 
