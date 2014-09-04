@@ -67,12 +67,12 @@ public class Exercicio01 extends JFrame {
 		
 		jtfNome = new JTextField(15);
 		pnlPrincipal.add(jtfNome, new GridConstraints().setGridLocation(0, 1).setInsets(5)
-				.setAnchor(GridConstraints.NORTHWEST).setGridSize(GridConstraints.REMAINDER, 1)
+				.setAnchor(GridConstraints.NORTHWEST).setOccupiedSize(GridConstraints.REMAINDER, 1)
 				.setGridWeight(1, 0).setFill(GridConstraints.BOTH));
 		
 		jlbEstilo = new JLabel("Estilo: ");
 		pnlPrincipal.add(jlbEstilo, new GridConstraints().setGridLocation(1, 0).setInsets(5)
-				.setAnchor(GridConstraints.NORTHEAST).setGridSize(GridConstraints.REMAINDER,  1)
+				.setAnchor(GridConstraints.NORTHEAST).setOccupiedSize(GridConstraints.REMAINDER,  1)
 				.setFill(GridConstraints.BOTH));
 		
 		String[] sEstilos = {"Terror","Suspense","Romance","Comédia","Ficção","Infantil"};
@@ -87,23 +87,23 @@ public class Exercicio01 extends JFrame {
 			pnlEstilos.add(jrbEstilos[i]);
 		}
 		pnlPrincipal.add(pnlEstilos, new GridConstraints().setGridLocation(2, 0).setInsets(5)
-				.setAnchor(GridConstraints.NORTHEAST).setGridSize(GridConstraints.REMAINDER,  1)
+				.setAnchor(GridConstraints.NORTHEAST).setOccupiedSize(GridConstraints.REMAINDER,  1)
 				.setFill(GridConstraints.BOTH));
 		
 		jlbFilmes = new JLabel("Filmes Cadastrados:");
 		pnlPrincipal.add(jlbFilmes, new GridConstraints().setGridLocation(3, 0).setInsets(5)
-				.setAnchor(GridConstraints.NORTHWEST).setGridSize(7,  1));
+				.setAnchor(GridConstraints.NORTHWEST).setOccupiedSize(7,  1));
 		
 		dlmList = new DefaultListModel<String>();
 		lstFilmes = new JList<String>(dlmList);
 		jspLista = new JScrollPane(lstFilmes);
 		pnlPrincipal.add(jspLista, new GridConstraints().setGridLocation(4, 0).setInsets(5)
-				.setAnchor(GridConstraints.NORTHEAST).setGridSize(GridConstraints.REMAINDER, GridConstraints.RELATIVE)
+				.setAnchor(GridConstraints.NORTHEAST).setOccupiedSize(GridConstraints.REMAINDER, GridConstraints.RELATIVE)
 				.setGridWeight(1, 1).setFill(GridConstraints.BOTH));
 		
 		jbtCadastrar = new JButton("Cadastrar Filme");
 		pnlPrincipal.add(jbtCadastrar, new GridConstraints().setGridLocation(5, 0).setInsets(5)
-				.setAnchor(GridConstraints.NORTHEAST).setGridSize(2, 0));
+				.setAnchor(GridConstraints.NORTHEAST).setOccupiedSize(2, 0));
 		
 		acoesComponentes();
 		

@@ -66,7 +66,7 @@ public class Exercicio03 extends JFrame{
 		jtfNome = new JTextField(25);
 		pnlPrincipal.add(jtfNome, new GridConstraints().setGridLocation(0, 1).setInsets(5)
 				.setAnchor(GridConstraints.NORTHWEST)
-				.setGridSize(GridConstraints.REMAINDER, 1).setFill(GridConstraints.BOTH));
+				.setOccupiedSize(GridConstraints.REMAINDER, 1).setFill(GridConstraints.BOTH));
 		
 		jlbSexo = new JLabel("Sexo:");
 		pnlPrincipal.add(jlbSexo, new GridConstraints().setGridLocation(1, 0).setInsets(5)
@@ -113,7 +113,7 @@ public class Exercicio03 extends JFrame{
 		jtfEmail = new JTextField(25);
 		pnlLogin.add(jtfEmail, new GridConstraints().setGridLocation(0, 1).setInsets(5)
 				.setAnchor(GridConstraints.NORTHWEST)
-				.setGridSize(GridConstraints.REMAINDER, 1).setFill(GridConstraints.BOTH));
+				.setOccupiedSize(GridConstraints.REMAINDER, 1).setFill(GridConstraints.BOTH));
 		
 		jlbSenha = new JLabel("Senha:");
 		pnlLogin.add(jlbSenha, new GridConstraints().setGridLocation(1, 0).setInsets(5)
@@ -122,7 +122,7 @@ public class Exercicio03 extends JFrame{
 		jtfSenha = new JTextField(10);
 		pnlLogin.add(jtfSenha, new GridConstraints().setGridLocation(1, 1).setInsets(5)
 				.setAnchor(GridConstraints.NORTHWEST)
-				.setGridSize(1, 1).setFill(GridConstraints.BOTH));
+				.setOccupiedSize(1, 1).setFill(GridConstraints.BOTH));
 		
 		jlbConfirmacaoSenha = new JLabel("Confirmar Senha:");
 		pnlLogin.add(jlbConfirmacaoSenha, new GridConstraints().setGridLocation(1, 2).setInsets(5)
@@ -131,14 +131,14 @@ public class Exercicio03 extends JFrame{
 		jtfConfirmaçãoSenha = new JTextField(10);
 		pnlLogin.add(jtfConfirmaçãoSenha, new GridConstraints().setGridLocation(1, 3).setInsets(5)
 				.setAnchor(GridConstraints.NORTHWEST)
-				.setGridSize(1, 1).setFill(GridConstraints.BOTH));
+				.setOccupiedSize(1, 1).setFill(GridConstraints.BOTH));
 		
 		pnlPrincipal.add(pnlLogin, new GridConstraints().setGridLocation(3, 0).setInsets(5)
-				.setAnchor(GridConstraints.NORTHWEST).setFill(GridConstraints.BOTH).setGridSize(4, 2));
+				.setAnchor(GridConstraints.NORTHWEST).setFill(GridConstraints.BOTH).setOccupiedSize(4, 2));
 		
 		jchReceberEmail = new JCheckBox("Desejo receber informações por e-mail");
 		pnlPrincipal.add(jchReceberEmail, new GridConstraints().setGridLocation(5, 0).setInsets(5)
-				.setAnchor(GridConstraints.NORTHWEST).setGridSize(2, 1));
+				.setAnchor(GridConstraints.NORTHWEST).setOccupiedSize(2, 1));
 		
 		jbtEnviar = new JButton("Enviar");
 		pnlPrincipal.add(jbtEnviar, new GridConstraints().setGridLocation(6, 2).setInsets(5)

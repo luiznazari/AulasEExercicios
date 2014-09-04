@@ -46,10 +46,10 @@ public class Exercicio03 extends JFrame{
 		
 		jtfValor = new JTextField();
 		pnlPrincipal.add(jtfValor, new GridConstraints().setAnchor(GridConstraints.WEST).setInsets(5)
-						.setFill(GridConstraints.BOTH).setGridSize(GridConstraints.RELATIVE, 1).setGridWeight(1, 0));
+						.setFill(GridConstraints.BOTH).setOccupiedSize(GridConstraints.RELATIVE, 1).setGridWeight(1, 0));
 		
 		jbtAdd = new JButton("Adicionar");
-		pnlPrincipal.add(jbtAdd, new GridConstraints().setAnchor(GridConstraints.EAST).setInsets(5).setGridSize(GridConstraints.REMAINDER, 1));
+		pnlPrincipal.add(jbtAdd, new GridConstraints().setAnchor(GridConstraints.EAST).setInsets(5).setOccupiedSize(GridConstraints.REMAINDER, 1));
 		
 		model = new DefaultListModel<Float>();
 		
@@ -58,16 +58,16 @@ public class Exercicio03 extends JFrame{
 		jlsValores.setFont(new Font("Meera", Font.PLAIN, 16));
 		jspScroll = new JScrollPane(jlsValores);
 		pnlPrincipal.add(jspScroll, new GridConstraints().setFill(GridConstraints.BOTH)
-						.setAnchor(GridConstraints.WEST).setInsets(5).setGridSize(GridConstraints.REMAINDER, GridConstraints.RELATIVE)
+						.setAnchor(GridConstraints.WEST).setInsets(5).setOccupiedSize(GridConstraints.REMAINDER, GridConstraints.RELATIVE)
 						.setGridWeight(1, 1));		
 		
 		jbtCalcular = new JButton("Calcular Média");
 		pnlPrincipal.add(jbtCalcular, new GridConstraints().setAnchor(GridConstraints.WEST)
-						.setInsets(5).setGridSize(2, 1));
+						.setInsets(5).setOccupiedSize(2, 1));
 		
 		jlbMedia = new JLabel("Média: ");
 		pnlPrincipal.add(jlbMedia, new GridConstraints().setAnchor(GridConstraints.WEST)
-						.setInsets(5).setGridSize(2, 1));
+						.setInsets(5).setOccupiedSize(2, 1));
 		
 		acoesComponentes();
 		

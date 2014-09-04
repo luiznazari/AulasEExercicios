@@ -56,7 +56,7 @@ public class Exercicio04 extends JFrame{
 		
 		pnlMain.add(getDescontos(), new GridConstraints()
 					.setGridLocation(1, 0).setAnchor(GridConstraints.WEST).setInsets(5)
-					.setFill(GridConstraints.BOTH).setGridSize(1, 3));
+					.setFill(GridConstraints.BOTH).setOccupiedSize(1, 3));
 		
 		jbtCalcularValor = new JButton("Calcular Valor Líquido");
 		pnlMain.add(jbtCalcularValor, new GridConstraints()

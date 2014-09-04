@@ -76,11 +76,11 @@ public class Exercicio04 extends JFrame {
 		jlsValores.setFont(new Font("Meera", Font.PLAIN, 16));
 		jspScroll = new JScrollPane(jlsValores);
 		pnlPrincipal.add(jspScroll, new GridConstraints().setGridLocation(2, 0).setFill(GridConstraints.BOTH)
-						.setAnchor(GridConstraints.WEST).setInsets(5).setGridSize(2, 3));		
+						.setAnchor(GridConstraints.WEST).setInsets(5).setOccupiedSize(2, 3));		
 		
 		jcbValores = new JComboBox<String>();
 		pnlPrincipal.add(jcbValores, new GridConstraints().setGridLocation(2, 2).setFill(GridConstraints.HORIZONTAL)
-				.setAnchor(GridConstraints.NORTHWEST).setInsets(5).setGridSize(2, 3));
+				.setAnchor(GridConstraints.NORTHWEST).setInsets(5).setOccupiedSize(2, 3));
 		
 		acoesComponentes();
 		
